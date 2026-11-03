@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}{{ 'Editar' if producto else 'Nuevo' }} producto | TechBol{% endblock %}
+{% block content %}
+<h1 class="h3 mb-3">{{ 'Editar producto' if producto else 'Nuevo producto' }}</h1>
+<form method="post" class="form-panel"><div class="mb-3"><label class="form-label" for="nombre">Nombre</label><input class="form-control" id="nombre" name="nombre" value="{{ request.form.get('nombre', producto.nombre if producto else '') }}" maxlength="120" required></div><div class="mb-3"><label class="form-label" for="precio">Precio (Bs)</label><input class="form-control" id="precio" name="precio" type="number" min="0.01" step="0.01" value="{{ request.form.get('precio', producto.precio if producto else '') }}" required></div><div class="mb-3"><label class="form-label" for="stock">Stock</label><input class="form-control" id="stock" name="stock" type="number" min="0" step="1" value="{{ request.form.get('stock', producto.stock if producto else 0) }}" required></div><button class="btn btn-primary">Guardar</button> <a class="btn btn-outline-secondary" href="{{ url_for('productos.listar') }}">Cancelar</a></form>
+{% endblock %}

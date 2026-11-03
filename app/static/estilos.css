@@ -1,0 +1,13 @@
+body {
+    background: #f7f8fa;
+}
+main {
+    min-height: calc(100vh - 56px);
+}
+.form-panel {
+    max-width: 640px;
+    padding: 1.5rem;
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    background: #fff;
+}

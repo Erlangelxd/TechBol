@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}{{ 'Editar' if cliente else 'Nuevo' }} cliente | TechBol{% endblock %}
+{% block content %}
+<h1 class="h3 mb-3">{{ 'Editar cliente' if cliente else 'Nuevo cliente' }}</h1>
+<form method="post" class="form-panel"><div class="mb-3"><label class="form-label" for="nombre">Nombre</label><input class="form-control" id="nombre" name="nombre" value="{{ request.form.get('nombre', cliente.nombre if cliente else '') }}" maxlength="120" required></div><div class="mb-3"><label class="form-label" for="telefono">Teléfono</label><input class="form-control" id="telefono" name="telefono" value="{{ request.form.get('telefono', cliente.telefono if cliente else '') }}" maxlength="30" required></div><button class="btn btn-primary">Guardar</button> <a class="btn btn-outline-secondary" href="{{ url_for('clientes.listar') }}">Cancelar</a></form>
+{% endblock %}
