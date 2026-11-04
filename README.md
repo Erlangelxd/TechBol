@@ -37,3 +37,4 @@ flask --app run run --debug
 ```
 
 Abre `http://127.0.0.1:5000` en el navegador. La aplicación permite registrar, editar, buscar y eliminar productos y clientes, además de crear y consultar pedidos. El monto del pedido se calcula con el precio del producto y la cantidad, y se descuenta el stock disponible.
+# TechBol
