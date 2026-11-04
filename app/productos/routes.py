@@ -5,7 +5,6 @@ from app.extensions import db
 from app.models import Producto
 from . import bp_productos
 
-
 def leer_formulario():
     nombre = request.form.get("nombre", "").strip()
     try:
@@ -16,7 +15,6 @@ def leer_formulario():
     if not nombre or precio <= 0 or stock < 0:
         return None, "Ingresa un nombre, un precio mayor a cero y un stock válido."
     return {"nombre": nombre, "precio": precio, "stock": stock}, None
-
 
 @bp_productos.get("/")
 def listar():

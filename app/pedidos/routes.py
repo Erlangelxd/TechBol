@@ -4,12 +4,10 @@ from app.extensions import db
 from app.models import Cliente, Pedido, Producto
 from . import bp_pedidos
 
-
 @bp_pedidos.get("/")
 def listar():
     pedidos = Pedido.query.order_by(Pedido.fecha.desc(), Pedido.id.desc()).all()
     return render_template("pedidos/lista.html", pedidos=pedidos)
-
 
 @bp_pedidos.route("/nuevo", methods=["GET", "POST"])
 def nuevo():
@@ -42,7 +40,6 @@ def nuevo():
                 flash("El pedido se registró y el inventario se actualizó.", "success")
                 return redirect(url_for("pedidos.listar"))
     return render_template("pedidos/formulario.html", clientes=clientes, productos=productos)
-
 
 @bp_pedidos.post("/<int:pedido_id>/eliminar")
 def eliminar(pedido_id):
