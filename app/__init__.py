@@ -28,8 +28,8 @@ def create_app(config_class=Config):
     def datos_demo():
         if not models.Cliente.query.first():
             db.session.add_all([
-                models.Cliente(nombre="María López", telefono="72001001"),
-                models.Cliente(nombre="Carlos Flores", telefono="72001002"),
+                models.Cliente(nombre="Erlan Angel", telefono="73597158"),
+                models.Cliente(nombre="Luz Lorena", telefono="34541290"),
             ])
         if not models.Producto.query.first():
             db.session.add_all([
